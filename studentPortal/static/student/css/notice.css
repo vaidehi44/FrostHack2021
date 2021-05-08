@@ -1,0 +1,73 @@
+
+body{
+    background-color: rgb(226, 225, 223);
+    padding:20px;
+
+}
+
+header h2{
+    width:100%;
+    border-bottom: 1px solid grey;
+    padding:10px;
+    padding-left:0;
+    font-size:30px;
+
+}
+header p{
+    font-size:20px;
+}
+.log{
+    float:right;
+}
+div.nav{
+    height: 80px;
+    display:block;
+    clear:both;
+
+}
+
+.nav div.tabs #nav-box{
+    display:block;
+}
+
+.nav div.tabs a{
+    display:inline-block;
+    width: 200px;
+    height: 50px;
+    margin: 50px;
+    padding:10px;
+    background-color: rgb(238, 190, 127);
+    border-radius:5px;
+    border: 2px solid rgb(83, 83, 83);
+    
+}
+.tabs{
+    text-align:center;
+    padding:5px;
+    
+}
+.main{
+    margin-top:120px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    border:8px solid rgb(44, 43, 43);
+    border-radius:7px;
+    padding:20px;
+    width:74%;
+    min-height: 400px;
+    text-align:center;
+    background-color: rgb(15, 92, 66);
+    color:rgb(214, 209, 209);
+}
+
+.board {
+    padding-left:60px;
+    padding-right:70px;
+    text-align:left;
+}
+
+li .user{
+    float:right;
+}
+

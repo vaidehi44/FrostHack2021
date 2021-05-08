@@ -1,0 +1,72 @@
+{% extends "teacher_portal/base.html" %}
+
+{% load static %}
+
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'teacher/css/assg.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <div>
+        <div class='form'>
+            <h3>Create new assignment</h3>
+
+            <form action='' method='post' enctype="multipart/form-data">
+
+                {% csrf_token %}
+
+                <label for="std">Class:</label>
+                {{ form.std }}<br>
+                <label for="subject">Subject:</label>
+                {{ form.subject }} <br>
+                <label for="mssg">Instructions/Notice:</label>
+                {{ form.mssg }}<br>
+                <label for="deadline">Deadline:</label>    
+                {{ form.deadline }} <br> 
+
+    
+                <input type='submit' name="new_assg" value='Create'> 
+
+            </form>
+
+        </div>
+
+        <div class='assgs'>
+            <ul>
+                {% for assg in assgs %}
+
+                <li>
+                    <div class="assg_container">
+                        <h4 class="title">Class {{assg.std}}, {{ assg.subject }}  <small>- {{ assg.date }}</small></h4>
+            
+                        <p>{{ assg.mssg }}</p>
+
+                        <p id='deadline'> Deadline: {{ assg.deadline }}</p>
+
+                    </div>
+
+                    <div>
+                        <form action='' method='post' enctype="multipart/form-data">
+                            {% csrf_token %}
+
+                            <input type='hidden' name='assg_id' value={{ assg.id }}>
+                            <input type='submit' name="close_assg" value='Close Assignment'>
+
+                        </form>
+                    </div>
+
+                </li>
+                {% endfor %}
+            </ul>
+           
+
+        </div>
+    </div>
+
+        
+{% endblock content %}

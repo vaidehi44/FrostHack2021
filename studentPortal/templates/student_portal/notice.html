@@ -1,0 +1,32 @@
+{% extends "student_portal/base.html" %}
+
+{% load static %}
+
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'student/css/notice.css' %}">
+{% endblock styles %}
+
+
+{% block content %}
+        <div>
+            <h1>Noticeboard</h1>
+            <div class="board" ">  
+
+                 <ul>
+                    {% for notice in object_list %}
+                    <li>
+                        <h3>{{ notice.mssg }} </h3>
+
+                    </li>
+                    {% endfor %}
+
+                </ul>                        
+
+            </div>
+                
+        </div>
+  
+{% endblock content %}

@@ -1,0 +1,53 @@
+<HTML>
+    <HEADER>
+        <TITLE>Login</TITLE>
+
+        <style>
+
+            body{
+                background-color:rgb(243, 191, 135);
+            }
+            div.cont{
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
+                margin-top:100px;
+                border:1px solid rgb(92, 91, 91);
+                width:400px;
+                padding:15px;
+                background-color:rgb(231, 226, 226);
+                border-radius:5px;
+            }
+
+            input{
+                width:90%;
+                margin:10px;
+                margin-left:0px;
+            }
+            .btn{
+                width:100px;
+                margin-top:20px;
+            }
+
+        </style>
+    </HEADER>
+    <BODY>
+
+        <div class="cont">
+            <div>
+                <h3>Teacher Login</h3>
+                <FORM id="login_form" method="post" action="">
+                    {% csrf_token %}
+                        Username:
+                        <input type="text" name="username" value="" id="username" size="50" />
+                    <br />
+                        Password:
+                        <input type="password" name="password" value="" id="password" size="50" />
+                        <br />
+                <INPUT type="submit" class='btn' name="submit" value="Login" />
+                </FORM>
+            </div>
+
+        </div>
+    </BODY>
+    </HTML>

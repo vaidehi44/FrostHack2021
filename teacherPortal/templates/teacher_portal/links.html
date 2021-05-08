@@ -1,0 +1,40 @@
+{% extends "teacher_portal/base.html" %}
+{% load static %}
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'teacher/css/links.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <h3>Timetable</h3>
+
+    <div class="container">
+
+        <div class="link_cont">
+
+            <button class="link-btn" style="width:100%;height:40px;">Class 1 - <a href="{{ object_list.0.link_url }}">{{ object_list.0.link_url }} </a> 
+
+        </div>
+        <div class="link_cont">
+
+            <button class="link-btn" style="width:100%;height:40px;">Class 2 -  <a href="{{ object_list.1.link_url }}">{{ object_list.1.link_url }} </a> 
+
+        </div>
+        <div class="link_cont">
+
+            <button class="link-btn" style="width:100%;height:40px;">Class 3 - <a href="{{ object_list.2.link_url }}">{{ object_list.2.link_url }} </a> 
+
+        </div>
+        <div class="link_cont">
+
+            <button class="link-btn" style="width:100%;height:40px;">Class 4 - <a href="{{ object_list.3.link_url }}">{{ object_list.3.link_url }} </a> 
+
+        </div>
+
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "teacher_portal/base.html" %}
+
+{% load static %}
+
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'teacher/css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+
+    <h3>Timetable</h3>
+
+        <table id="timetable">
+                        
+                        
+        </table>
+{% endblock content %}
+
+
+{% block scripts %}  
+
+    <script>
+        tt_json = JSON.parse("{{ timetable|escapejs }}");
+    
+        table = document.getElementById("timetable");
+        header_row = document.createElement("TR");
+        table.appendChild(header_row);
+    
+        for (header in tt_json) {
+            cell = document.createElement("TH");
+            header_row.appendChild(cell);
+            cell.innerHTML = header;
+        }
+    
+        for (var i=0; i<5; i++ ){
+            row = document.createElement("TR");
+            table.appendChild(row);
+            index = i.toString();
+            for (column in tt_json) {
+                cell = document.createElement("TD");
+                row.appendChild(cell);
+                if ( tt_json[column][index] === 'Unnamed: 0') {
+                    cell.innerHTML = "";
+                }else{
+                cell.innerHTML = tt_json[column][index];
+                }
+            }
+        }
+    </script>
+{% endblock scripts %}

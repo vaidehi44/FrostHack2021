@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+        {{ page_title|default:"Teacher Portal" }}
+        {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static '/student/base.css' %}" type="text/css" >
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    {% block styles %} {% endblock styles %}
+</head>
+
+<body>
+    <header>
+        <div>
+            <div class="log">
+                <a href="{% url 'teacherPortal:logout' %}" >logout</a>
+            </div>
+            <div>
+                <h2>Teacher Portal</h2>
+            </div>
+
+        </div>
+        
+        <p> Welcome {{ curr_teacher.user.username }} </p>
+
+    </header> 
+
+
+    <div class="nav">
+        <div class="tabs">
+            <div id="nav-box">
+                <a class="current" href="{% url 'teacherPortal:home' request.user.id %}"><div >Timetable</div></a>
+                <a href="{% url 'teacherPortal:links' %}"><div>Class Links</div></a>
+                <a href="{% url 'teacherPortal:assg' %}"><div>Assignments</div></a>
+                <a href="{% url 'teacherPortal:notice' %}"><div>Noticeboard</div></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">    
+
+        {% block content %}
+
+        {% endblock content %}
+        
+        
+    </div>
+
+{% block scripts %}  
+
+{% endblock scripts %}
+    
+</body>
+</html>

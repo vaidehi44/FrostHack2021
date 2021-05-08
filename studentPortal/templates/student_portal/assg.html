@@ -1,0 +1,42 @@
+{% extends "student_portal/base.html" %}
+
+{% load static %}
+
+
+{% block title %} {{ title }} {% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'student/css/assg.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+    <ul>
+        {% for assg in assgs %}
+
+        <li>
+            <div class="assg_container">
+                <h4 class="sub">{{ assg.subject }}  <small>- {{ assg.date }}</small></h4>
+
+                <p>{{ assg.mssg }}</p>
+
+                <p id='deadline'> Deadline: {{ assg.deadline }}</p>
+
+                <form action='' method='post' enctype="multipart/form-data">
+
+                    {% csrf_token %}
+                    <label for="file">Submit answersheet:</label>
+                    <input type='file' id="answer" name='answer'><br>
+                    <input type='hidden' name='assg_id' value={{ assg.id }}>
+
+                    <input type='submit' value='Submit'>
+
+                </form>
+            </div>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+{% endblock content %}
