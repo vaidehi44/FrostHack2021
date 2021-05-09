@@ -11,13 +11,16 @@ header h2{
     padding:10px;
     padding-left:0;
     font-size:30px;
-
+    color:rgb(205, 205, 211);
 }
+
 .log{
     float:right;
 }
 header p{
     font-size:20px;
+    color:rgb(205, 205, 211);
+
 }
 
 div.nav{
@@ -31,17 +34,23 @@ div.nav{
     display:block;
 }
 
+
 .nav div.tabs a{
     display:inline-block;
-    width: 200px;
-    height: 50px;
-    margin: 50px;
+    width: 230px;
+    height: 35px;
+    margin: 80px;
+    margin-top:0;
     padding:10px;
-    background-color: rgb(238, 190, 127);
+    background-color: rgb(126, 146, 184);
     border-radius:5px;
     border: 2px solid rgb(83, 83, 83);
+    font-size:23px;
+    color:rgb(19, 27, 41);
+    text-decoration: none;
     
 }
+
 .tabs{
     text-align:center;
     padding:5px;
@@ -56,9 +65,31 @@ div.nav{
     padding:20px;
     width:70%;
     text-align:center;
-    background-color: rgb(238, 190, 127);
+    background-color:rgb(193, 198, 199);
 }
 
 input {
     margin:20px;
+}
+
+
+header{
+    background-color: rgb(19, 42, 75);
+    width:100%;
+    margin:-40px;
+    padding:40px;
+    
+}
+
+.logout{
+    padding:8px;
+    background-color: rgb(223, 91, 68);
+    color:rgb(6, 7, 10);
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 10px;
+}
+.logout:hover{
+    background-color: rgb(184, 50, 26);
+    text-decoration: none;
 }

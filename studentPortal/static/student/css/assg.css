@@ -1,0 +1,29 @@
+.assg_container{
+    display:flex;
+    flex-direction: row;
+    width:80%;
+    background-color:rgb(161, 169, 170);
+    padding:10px;
+    border-radius: 5px;
+}
+
+.item1{
+    width:70%;
+    text-align: start;
+}
+
+.item2{
+    width:20%;
+    border-left: 1px solid rgb(107, 104, 104);
+}
+
+li{
+    list-style-type: none;
+}
+
+h4{
+    font-size:20px;
+}
+h4, p, input {
+    margin:5px;
+}

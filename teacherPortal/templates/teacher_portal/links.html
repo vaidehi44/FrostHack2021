@@ -10,30 +10,21 @@
 
 {% block content %}
 
-    <h3>Timetable</h3>
+    <h3>Class links</h3>
 
     <div class="container">
 
-        <div class="link_cont">
+        <div class='cont'>Class 1 - <a href="{{ object_list.0.link_url }}">{{ object_list.0.link_url }} </a></div>
+        <div class='cont'>Class 2 - <a href="{{ object_list.1.link_url }}">{{ object_list.1.link_url }} </a></div>
+        <div class='cont'>Class 3 - <a href="{{ object_list.2.link_url }}">{{ object_list.2.link_url }} </a></div>
+        <div class='cont'>Class 4 - <a href="{{ object_list.3.link_url }}">{{ object_list.3.link_url }} </a></div>
+        <div class='cont'>Class 5 - <a href="{{ object_list.4.link_url }}">{{ object_list.4.link_url }} </a></div>
+        <div class='cont'>Class 6 - <a href="{{ object_list.5.link_url }}">{{ object_list.5.link_url }} </a></div>
+        <div class='cont'>Class 7 - <a href="{{ object_list.6.link_url }}">{{ object_list.6.link_url }} </a></div>
+        <div class='cont'>Class 8 - <a href="{{ object_list.7.link_url }}">{{ object_list.7.link_url }} </a></div>
+        <div class='cont'>Class 9 - <a href="{{ object_list.8.link_url }}">{{ object_list.8.link_url }} </a></div>
+        <div class='cont'>Class 10 - <a href="{{ object_list.9.link_url }}">{{ object_list.9.link_url }} </a></div>
 
-            <button class="link-btn" style="width:100%;height:40px;">Class 1 - <a href="{{ object_list.0.link_url }}">{{ object_list.0.link_url }} </a> 
-
-        </div>
-        <div class="link_cont">
-
-            <button class="link-btn" style="width:100%;height:40px;">Class 2 -  <a href="{{ object_list.1.link_url }}">{{ object_list.1.link_url }} </a> 
-
-        </div>
-        <div class="link_cont">
-
-            <button class="link-btn" style="width:100%;height:40px;">Class 3 - <a href="{{ object_list.2.link_url }}">{{ object_list.2.link_url }} </a> 
-
-        </div>
-        <div class="link_cont">
-
-            <button class="link-btn" style="width:100%;height:40px;">Class 4 - <a href="{{ object_list.3.link_url }}">{{ object_list.3.link_url }} </a> 
-
-        </div>
 
     </div>
 

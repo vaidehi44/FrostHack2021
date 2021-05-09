@@ -12,7 +12,8 @@
 
 {% block content %}
 
-    <div>
+    <div class='flex'>
+
         <div class='form'>
             <h3>Create new assignment</h3>
 
@@ -37,6 +38,7 @@
         </div>
 
         <div class='assgs'>
+            <h3>Currently active assignmets -</h3>
             <ul>
                 {% for assg in assgs %}
 
@@ -50,7 +52,7 @@
 
                     </div>
 
-                    <div>
+                    <div class='btn'>
                         <form action='' method='post' enctype="multipart/form-data">
                             {% csrf_token %}
 

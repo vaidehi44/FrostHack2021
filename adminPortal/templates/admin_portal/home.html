@@ -1,0 +1,27 @@
+{% extends 'admin_portal/base.html' %}
+
+{% load static %}
+
+{% block styles %}
+<link rel="stylesheet" href="{% static 'admin_portal/css/home.css' %}" type="text/css" >
+
+{% endblock styles %}
+
+{% block content %}
+
+
+<div class='cont'><div class='left'>Class 1 - <a href="{{ object_list.0.link_url }}">{{ object_list.0.link_url }} </a></div>
+<div class='right'> </div><a href="{% url 'adminPortal:upload_link' object_list.0.id  %}" class="update">Add/Update Link</a></div>
+
+<div class='cont'><div class='left'>Class 2 - <a href="{{ object_list.1.link_url }}">{{ object_list.1.link_url }} </a></div>
+<div class='right'> </div><a href="{% url 'adminPortal:upload_link' object_list.1.id  %}" class="update">Add/Update Link</a></div>
+
+<div class='cont'><div class='left'>Class 3 - <a href="{{ object_list.2.link_url }}">{{ object_list.2.link_url }} </a></div>
+<div class='right'> </div><a href="{% url 'adminPortal:upload_link' object_list.2.id  %}" class="update">Add/Update Link</a></div>
+
+<div class='cont'><div class='left'>Class 4 - <a href="{{ object_list.3.link_url }}">{{ object_list.3.link_url }} </a></div>
+<div class='right'> </div><a href="{% url 'adminPortal:upload_link' object_list.3.id  %}" class="update">Add/Update Link</a></div>
+
+
+{% endblock content %}
+

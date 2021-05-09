@@ -12,27 +12,34 @@
 
 {% block content %}
 
+<h2> Your assignments</h2>
     <ul>
         {% for assg in assgs %}
 
         <li>
             <div class="assg_container">
-                <h4 class="sub">{{ assg.subject }}  <small>- {{ assg.date }}</small></h4>
+                <div class='item1'>
+                    <h4 class="sub">{{ assg.subject }}  <small>- {{ assg.date }}</small></h4>
 
-                <p>{{ assg.mssg }}</p>
+                    <p>{{ assg.mssg }}</p>
+    
+                    <p id='deadline'> Deadline: {{ assg.deadline }}</p>
+                </div>
+                
+                <div class='item2'>
+                    <form action='{% url "studentPortal:sub" %}' method='post' enctype="multipart/form-data">
 
-                <p id='deadline'> Deadline: {{ assg.deadline }}</p>
+                        {% csrf_token %}
+                        <label for="file">Submit answersheet:</label>
+                        <input type='file' id="answer" name='answer'><br>
+                        <input type='hidden' name='assg_id' value={{ assg.id }}>
+    
+                        <input type='submit' value='Submit'>
+    
+                    </form>
 
-                <form action='' method='post' enctype="multipart/form-data">
-
-                    {% csrf_token %}
-                    <label for="file">Submit answersheet:</label>
-                    <input type='file' id="answer" name='answer'><br>
-                    <input type='hidden' name='assg_id' value={{ assg.id }}>
-
-                    <input type='submit' value='Submit'>
-
-                </form>
+                </div>
+                
             </div>
         </li>
         {% endfor %}

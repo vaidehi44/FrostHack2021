@@ -1,0 +1,20 @@
+h2 {
+    color:rgb(51, 79, 138);
+}
+
+input {
+    height:22px;
+    width: 60%;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+
+input.btn {
+    height:25px;
+    padding:0px;
+    width: 100px;
+    background-color: rgb(76, 95, 143);
+    border:3px;
+    color:white;
+}

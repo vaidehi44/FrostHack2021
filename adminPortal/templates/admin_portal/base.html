@@ -6,17 +6,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Class links</title>
-    <link rel="stylesheet" href="{% static '/css/base.css' %}" type="text/css" >
+    <title>{% block title %}
+        {{ page_title|default:"Admin Portal" }}
+        {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'admin_portal/css/base.css' %}" type="text/css" >
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    {% block styles %}
+    {% endblock styles %}
 </head>
 
 <body>
     <header>
         <div>
             <div class="log">
-                <a href="{% url 'adminPortal:logout' %}" >logout</a>
+                <a href="{% url 'adminPortal:logout' %}" class="logout">logout</a>
             </div>
             <div>
                 <h2>Admin Portal</h2>
@@ -45,36 +49,15 @@
 
         <div class="container">
 
-                    <div class="link_cont">
-
-                        <button class="link-btn" style="width:100%;height:40px;">Class 1 - <a href="{{ object_list.0.link_url }}">{{ object_list.0.link_url }} </a> 
-                        <a href="{% url 'adminPortal:upload_link' object_list.0.id  %}" >Add/Update Link</a></button>    
-
-                    </div>
-                    <div class="link_cont">
-
-                        <button class="link-btn" style="width:100%;height:40px;">Class 2 -  <a href="{{ object_list.1.link_url }}">{{ object_list.1.link_url }} </a> 
-                        <a href="{% url 'adminPortal:upload_link' object_list.1.id  %}" >Add/Update Link</a></button>    
-
-                    </div>
-                    <div class="link_cont">
-
-                        <button class="link-btn" style="width:100%;height:40px;">Class 3 - <a href="{{ object_list.2.link_url }}">{{ object_list.2.link_url }} </a> 
-                        <a href="{% url 'adminPortal:upload_link' object_list.2.id  %}" >Add/Update Link</a></button>    
-
-                    </div>
-                    <div class="link_cont">
-
-                        <button class="link-btn" style="width:100%;height:40px;">Class 4 - <a href="{{ object_list.3.link_url }}">{{ object_list.3.link_url }} </a> 
-                        <a href="{% url 'adminPortal:upload_link' object_list.3.id  %}" >Add/Update Link</a></button>    
-
-                    </div>
-                
+            {% block content %}
+                    
+            {% endblock content %}
         </div>
             
              
     </div>
-
+    {% block scripts %}
+    {% endblock scripts %}
 
 
 </body>

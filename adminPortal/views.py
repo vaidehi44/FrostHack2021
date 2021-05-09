@@ -20,24 +20,9 @@ from django.utils.safestring import mark_safe
 User = get_user_model()
 
 
-def signup(request):
-    if request.method == 'POST':
-        user_form = UserForm(request.POST)
-        if user_form.is_valid():
-            user = user_form.save()
-            user.refresh_from_db()
-            user.save()
-            return HttpResponseRedirect(reverse('adminPortal:user_login'))
-            
-      
-    else:
-        user_form = UserForm()
-        return render(request,'student_portal/signup.html',{'user_form':user_form})
-
-
 class homeView(ListView):
     model = Link
-    template_name = 'admin_portal/base.html' 
+    template_name = 'admin_portal/home.html' 
     queryset = Link.objects.all()
 
     def get_context_data(self, **kwargs):
@@ -73,7 +58,7 @@ def TimetableView(request):
         tt_model.save()
 
         tt_json_array = []
-        tt = Timetable.objects.all()
+        tt = Student_Timetable.objects.all()
         for i in tt:
             url = i.excel_file.url
             tt_json_array.append(excel_to_json(url))

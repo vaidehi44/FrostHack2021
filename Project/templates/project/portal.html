@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portals</title>
+
+    <style>
+        .main{
+            text-align: center;
+        }
+        .portal{
+            height:300px;
+            width:400px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class='main'>
+
+        <div class='portal'>
+            <a href="{% url 'adminPortal:user_login' %}">Admin Portal</a>
+        </div>
+
+        <div class='portal'>
+            <a href="{% url 'studentPortal:user_login' %}">Student Portal</a>
+        </div>
+
+        <div class='portal'>
+            <a href="{% url 'teacherPortal:user_login' %}">Teacher Portal</a>
+        </div>
+
+
+    </div>
+</body>
+</html>

@@ -13,5 +13,6 @@ urlpatterns = [
     path('home/', include('django.contrib.auth.urls'),name="logout"),
     path('noticeboard', views.NoticeboardView.as_view(),name="notice"),
     path('assignments', views.AssignmentView.as_view(),name="assg"),
+    path('assignments/submission', views.CollectSubmission,name="sub"),
 
 ] 

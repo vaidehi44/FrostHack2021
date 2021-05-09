@@ -1,0 +1,66 @@
+
+.main1{
+    margin-top:80px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    border:1px solid rgb(83, 83, 83);
+    padding:20px;
+    width:90%;
+    text-align:center;
+    background-color: rgb(218, 224, 224);
+    
+}
+
+input {
+    margin:20px;
+}
+
+.cont1{
+    float:left;
+}
+
+h3 {
+    float:left;
+    clear:both;
+}
+
+.edit_notices {
+    float:left;
+}
+
+.edit_notices li{
+    list-style-type: none ;
+}
+.main1{
+    display:flex;
+    flex-direction: column;
+}
+li {
+    margin-left:-40px;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    background-color: white;
+    padding:-5px;
+}
+
+.mssg {
+    width:70%;
+    float:left;
+}
+
+.btn{
+    width:20%;
+
+}
+.mssg{
+    float:left;
+}
+p{
+    margin:3px;
+    float:left;
+    font-size:20px;
+}

@@ -1,55 +1,27 @@
+{% extends 'admin_portal/base.html' %}
 {% load static %}
 
+{% block styles %}
+<link rel="stylesheet" href="{% static 'admin_portal/css/tt.css' %}" type="text/css" >
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Timetables</title>
-    <script src="https://kit.fontawesome.com/f91dab228a.js"></script>
-    
-    <link rel="stylesheet" href="{% static '/css/tt.css' %}" type="text/css" >
+{% endblock styles %}
 
-</head>
-
-<body>
-    <header>
-        <div>
-            <h2>Admin Portal</h2>
-        </div>
-
-        <p> Welcome Admin </p>
-
-    </header> 
-
-
-    <div class="nav">
-        <div class="tabs">
-            <div id="nav-box">
-                <a class="current" href="{% url 'adminPortal:home' %}"><div >Class Links</div></a>
-                <a href="{% url 'adminPortal:timetable' %}"><div>Timetables</div></a>
-                <a href="{% url 'adminPortal:notice' %}"><div>Noticeboard</div></a>
-            </div>
-        </div>
-    </div>
-
+{% block content %}
     <div class="main">    
 
             <div class="cont">
                 <ul >
                     <li class="list-group-item">
-                    Class 1
-                    <div> 
-                        <div>
+                    <h3>Class 1</h3>
+                    <div class='cont2'> 
+                        <div class='tt'>
                             <table id="1">
                         
                         
                             </table>
                         </div>
 
-                        <div>
-                            <button class="tt-btn" style="width:200px;"><a href="#" >Add/Update Timetable</a></button>    
+                        <div class='upload'>
 
                             <h3>Update Timetable</h3>
                             <form action='' method='post' enctype="multipart/form-data">
@@ -70,17 +42,15 @@
 
 
                     <li class="list-group-item">
-                        Class 2
-                        <div> 
-                            <div>
+                        <h3>Class 2</h3>
+                        <div class='cont2'> 
+                            <div class='tt'>
                                 <table id="2">
-                            
                             
                                 </table>
                             </div>
     
-                            <div>
-                                <button class="tt-btn" style="width:200px;"><a href="#" >Add/Update Timetable</a></button>    
+                            <div class='upload'>
     
                                 <h3>Update Timetable</h3>
                                 <form action='' method='post' enctype="multipart/form-data">
@@ -88,8 +58,8 @@
                                     {% csrf_token %}
                                     <label for="file">Select an excel file:</label>
                                     <input type='file' id="excel_file" name='excel_file'><br>
-                                    <input type='hidden' name='std' value="2">
-
+                                    <input type='hidden' name='std' value="1">
+    
                                     <input type='submit' value='Update'> 
     
                                 </form> 
@@ -105,7 +75,10 @@
             </div>
                 
     </div>
-    
+ 
+    {% endblock content %}
+
+{% block scripts %}
     <script>
         var array = {{ tt_array|safe }}
        // var array = [ '{"c1":{"0":"s1","1":"s2"},"c2":{"0":"s11","1":"s22"}}', '{"c1":{"0":"s1","1":"s2"},"c2":{"0":"s11","1":"s22"}}']
@@ -140,45 +113,7 @@
             k = (k + 1);
             }
 
-        
-
-
-/*
-        tt_json = JSON.parse("{{ timetable|escapejs }}");
-    
-        table = document.getElementById("timetable");
-        header_row = document.createElement("TR");
-    
-        table.appendChild(header_row);
-       
-    
-        for (header in tt_json) {
-            cell = document.createElement("TH");
-            header_row.appendChild(cell);
-            cell.innerHTML = header;
-        }
-    
-        const row_count = 5;
-        for (var i=0; i<5; i++ ){
-            row = document.createElement("TR");
-            table.appendChild(row);
-            index = i.toString();
-            for (column in tt_json) {
-                cell = document.createElement("TD");
-                row.appendChild(cell);
-                if ( tt_json[column][index] === 'Unnamed: 0') {
-                    cell.innerHTML = "";
-                }else{
-                cell.innerHTML = tt_json[column][index];
-                }
-            }
-        }*/
     
     </script>
-
-</body>
-
-
-</html>
-
+{% endblock scripts %}
 

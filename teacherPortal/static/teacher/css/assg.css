@@ -1,0 +1,76 @@
+
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+
+.form{
+    width:50%;
+    border-right:1px solid rgb(63, 62, 62);
+}
+label{
+    margin-top:2px;
+    width:100px;
+    float:left;
+
+}
+form input{
+    width:200px;
+    margin-top:2px;
+}
+
+label[for='mssg']{
+    margin-top:20px;
+}
+input[type='text']{
+    height:60px;
+    width:300px;
+}
+
+input[type='submit']{
+    width:135px;
+}
+.assgs{
+    width:75%;
+    text-align: start;
+}
+
+.assgs li{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    background-color:rgb(161, 169, 170);
+    margin-top:10px;
+    padding:7px;
+}
+
+li .btn {
+    width:135px;
+    margin-top:20px;
+}
+
+input[name='close_assg']{
+    padding:10px;
+    background-color:rgb(35, 45, 78);
+    color:rgb(202, 199, 199);
+}
+input[name='close_assg']:hover {
+    background-color:rgb(17, 24, 49);
+
+}
+
+li .assg_container{
+    width:70%;
+}
+
+h4{
+    font-size:19px;
+}
+h4, p {
+    margin:3px;
+}
+h3{
+    margin-left:10px;
+}
+
+

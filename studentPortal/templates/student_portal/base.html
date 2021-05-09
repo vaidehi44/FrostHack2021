@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}
         {{ page_title|default:"Student Portal" }}
-        {% endblock title %}l</title>
-    <link rel="stylesheet" href="{% static '/student/base.css' %}" type="text/css" >
+        {% endblock title %}</title>
+    <link rel="stylesheet" href="{% static '/student/css/base.css' %}" type="text/css" >
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
     <script src="//code.jquery.com/jquery-1.12.4.js"></script>
     <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -22,7 +22,7 @@
     <header>
         <div>
             <div class="log">
-                <a href="{% url 'studentPortal:logout' %}" >logout</a>
+                <a href="{% url 'studentPortal:logout' %}" class='logout' >logout</a>
             </div>
             <div>
                 <h2>Student Portal</h2>

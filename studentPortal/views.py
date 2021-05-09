@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django import forms
 from django.contrib.auth.decorators import login_required
 from adminPortal.models import Link, Student_Timetable, Announcement
-from teacherPortal.models import Assignment
+from teacherPortal.models import Assignment, Submission
 from .models import Student
 import os, json
 import pandas as pd
@@ -98,17 +98,17 @@ class AssignmentView(LoginRequiredMixin, ListView):
             return context
 
 
-
-
 def CollectSubmission(request):
     if request.method=='POST':
         user = request.user
-        student = Students.objects.get(user=user)
+        student = Student.objects.get(user=user)
         answer = request.FILES['answer']
         assg_id = request.POST['assg_id']
         assg = Assignment.objects.get(id=assg_id)
-        submission_model = Assignment(student=student, answersheet=answer, assignment=assg)
+        submission_model = Submission(student=student, answersheet=answer, assignment=assg)
         submission_model.save()
+
+        return HttpResponseRedirect(reverse('studentPortal:assg'))
 
 class NoticeboardView(LoginRequiredMixin, ListView):
     model = Announcement

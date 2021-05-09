@@ -1,0 +1,75 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portals</title>
+
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background-color:rgb(28, 73, 114);
+        }
+        header{
+            margin:0;
+            padding:30px;
+            text-align:center;
+            background-color: rgb(13, 42, 73);
+            font-size:30px;
+            color:rgb(206, 202, 202);
+        }
+        .main{
+            text-align: center;
+            margin-top:160px;
+        }
+        .portal{
+            height:120px;
+            width:120px;
+            background-color:rgb(197, 198, 199);
+            display:inline-block;
+            margin:70px;
+            border-radius: 10px;
+            border:2px solid rgb(11, 30, 54);
+            padding:50px;
+        }
+
+        a{
+            text-decoration: none;
+            color:rgb(32, 59, 117);
+            font-size:25px;
+
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        Online Education Platform
+    </header>
+
+    <div class='main'>
+
+        <div class='portal'>
+            <a href="{% url 'adminPortal:user_login' %}">Admin Portal</a>
+        </div>
+
+        <div class='portal'>
+            <a href="{% url 'studentPortal:user_login' %}">Student Portal</a>
+        </div>
+
+        <div class='portal'>
+            <a href="{% url 'teacherPortal:user_login' %}">Teacher Portal</a>
+        </div>
+
+
+    </div>
+</body>
+</html>

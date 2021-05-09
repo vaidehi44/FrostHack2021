@@ -5,18 +5,22 @@ body{
 
 }
 
+
 header h2{
     width:100%;
     border-bottom: 1px solid grey;
     padding:10px;
     padding-left:0;
     font-size:30px;
+    color:rgb(205, 205, 211);
 }
 .log{
     float:right;
 }
 header p{
     font-size:20px;
+    color:rgb(205, 205, 211);
+
 }
 
 div.nav{
@@ -32,13 +36,17 @@ div.nav{
 
 .nav div.tabs a{
     display:inline-block;
-    width: 200px;
-    height: 50px;
-    margin: 50px;
+    width: 230px;
+    height: 35px;
+    margin: 80px;
+    margin-top:0;
     padding:10px;
-    background-color: rgb(238, 190, 127);
+    background-color: rgb(126, 146, 184);
     border-radius:5px;
     border: 2px solid rgb(83, 83, 83);
+    font-size:23px;
+    color:rgb(19, 27, 41);
+    text-decoration: none;
     
 }
 .tabs{
@@ -55,21 +63,30 @@ div.nav{
     margin-left:auto;
     margin-right:auto;
     width: 70%;
-    margin-top:120px;
+    margin-top:80px;
     clear:both;
 
 }
 
-.container button{
-    width: 100%;
-    display:block;
-    background-color: rgb(238, 190, 127);
-    border-radius:5px;
-    border: 1px solid rgb(83, 83, 83);
-
+header{
+    background-color: rgb(19, 42, 75);
+    width:100%;
+    margin:-60px;
+    padding:60px;
+    
 }
 
-.link_cont button a{
-    margin-left:20px;
-
+.logout{
+    padding:8px;
+    background-color: rgb(223, 91, 68);
+    color:rgb(35, 45, 68);
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 10px;
 }
+.logout:hover{
+    background-color: rgb(184, 50, 26);
+    text-decoration: none;
+}
+
+    
