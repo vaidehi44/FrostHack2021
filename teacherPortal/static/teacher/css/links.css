@@ -13,14 +13,20 @@
     width: 100%;
     display:block;
     background-color: rgb(218, 224, 224);
-    border: 1px solid rgb(83, 83, 83);
     padding: 10px;
     margin-top:20px;
     text-align: start;
 
 }
 
-.link_cont button a{
+a{
     margin-left:20px;
+    text-decoration: none;
+    color:rgb(61, 79, 184);
+
+}
+a:hover{
+    color:rgb(20, 20, 102);
+    text-decoration: underline;
 
 }

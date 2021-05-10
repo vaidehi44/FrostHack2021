@@ -64,10 +64,10 @@ def TimetableView(request):
             tt_json_array.append(excel_to_json(url))
         tt_array = json.dumps(tt_json_array)
 
-        return render(request, 'admin_portal/timetable.html', {'tt_array':tt_array})
+        return render(request, 'admin_portal/timetable.html', {'tt_array':tt_array, 'timetables':tt})
 
     else:
-        return render(request, 'admin_portal/timetable.html', {'tt_array':tt_array})
+        return render(request, 'admin_portal/timetable.html', {'tt_array':tt_array, 'timetables':tt})
 
 
 
@@ -76,14 +76,6 @@ class UpdateLinkView(UpdateView):
     template_name="admin_portal/update.html"
     fields = ("link_url",)
     success_url = reverse_lazy("adminPortal:home")
-
-
-class UpdateTTView(UpdateView):
-    model = Student_Timetable
-    template_name="admin_portal/upload_tt.html"
-    fields = ("excel_file",)
-    success_url = reverse_lazy("adminPortal:timetable")
-
 
 
 def NoticeboardView(request):

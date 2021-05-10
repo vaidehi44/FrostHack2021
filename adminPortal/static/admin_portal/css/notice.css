@@ -21,7 +21,6 @@ input {
 }
 
 h3 {
-    float:left;
     clear:both;
 }
 
@@ -43,24 +42,36 @@ li {
     display: flex;
     flex-direction: row;
     width: 80%;
-    background-color: white;
-    padding:-5px;
+    background-color:rgb(161, 169, 170);
+    padding:15px;
+    margin:15px;
 }
 
 .mssg {
-    width:70%;
+    width:80%;
     float:left;
+    overflow-x: auto;
+    flex-wrap: wrap;
+    text-align: left;
 }
 
 .btn{
-    width:20%;
+    width:auto;
+    margin:-20px;
+    margin-left:15px;
+    align-content: end;
+}
 
-}
-.mssg{
-    float:left;
-}
 p{
     margin:3px;
     float:left;
     font-size:20px;
+}
+
+.btn input[type='submit']{
+    padding:3px;
+    background-color: rgb(76, 95, 143);
+    color:white;
+    float:right;
+    border-radius: 5px;
 }

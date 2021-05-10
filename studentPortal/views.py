@@ -113,7 +113,7 @@ def CollectSubmission(request):
 class NoticeboardView(LoginRequiredMixin, ListView):
     model = Announcement
     template_name = 'student_portal/notice.html' 
-    queryset = Announcement.objects.all()
+    queryset = Announcement.objects.filter(is_open=True)
 
     def form_valid(self, form):
         form.instance.user = self.request.user

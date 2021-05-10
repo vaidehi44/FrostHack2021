@@ -13,7 +13,16 @@
     width:70%;    
     text-align:left;
 }
+li {
+    margin-top:10px;
+}
+h3{
+    margin:0;
+    width:100%;
+    font-size: 22px;
+}
 
-li .user{
-    float:right;
+p{
+    text-align: end;
+    width:100%;
 }

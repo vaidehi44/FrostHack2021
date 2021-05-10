@@ -11,64 +11,30 @@
 
             <div class="cont">
                 <ul >
+                    {% for tt in timetables %} 
                     <li class="list-group-item">
-                    <h3>Class 1</h3>
-                    <div class='cont2'> 
-                        <div class='tt'>
-                            <table id="1">
-                        
-                        
-                            </table>
-                        </div>
-
-                        <div class='upload'>
-
-                            <h3>Update Timetable</h3>
-                            <form action='' method='post' enctype="multipart/form-data">
-
-                                {% csrf_token %}
-                                <label for="file">Select an excel file:</label>
-                                <input type='file' id="excel_file" name='excel_file'><br>
-                                <input type='hidden' name='std' value="1">
-
-                                <input type='submit' value='Update'> 
-
-                            </form> 
-                        </div>
-                    </div>
-                    
-                    
-                    </li>
-
-
-                    <li class="list-group-item">
-                        <h3>Class 2</h3>
+                        <h3>Class {{ tt.std }}</h3>
                         <div class='cont2'> 
                             <div class='tt'>
-                                <table id="2">
+                                <table id="{{ tt.std }}">
                             
                                 </table>
                             </div>
-    
+
                             <div class='upload'>
-    
                                 <h3>Update Timetable</h3>
                                 <form action='' method='post' enctype="multipart/form-data">
-    
                                     {% csrf_token %}
                                     <label for="file">Select an excel file:</label>
                                     <input type='file' id="excel_file" name='excel_file'><br>
-                                    <input type='hidden' name='std' value="1">
-    
-                                    <input type='submit' value='Update'> 
-    
+                                    <input type='hidden' name='std' value="{{tt.std }}">
+                                    <input type='submit' value='Update'>
                                 </form> 
                             </div>
                         </div>
-                        
-                        
-                        </li>
-                    
+                    </li>
+
+                    {% endfor %}
                 </ul>
                 
                 
@@ -81,15 +47,12 @@
 {% block scripts %}
     <script>
         var array = {{ tt_array|safe }}
-       // var array = [ '{"c1":{"0":"s1","1":"s2"},"c2":{"0":"s11","1":"s22"}}', '{"c1":{"0":"s1","1":"s2"},"c2":{"0":"s11","1":"s22"}}']
-        var k=1;
-        for (i=0; i<2;i++) {
-            tt_json = JSON.parse(array[i]);
-            table = document.getElementById(k.toString());
+        for (i=1; i<11;i++) {
+            tt_json = JSON.parse(array[i-1]);
+            table = document.getElementById(i.toString());
             header_row = document.createElement("TR");
     
             table.appendChild(header_row);
-        
         
             for (header in tt_json) {
                 cell = document.createElement("TH");
@@ -110,10 +73,7 @@
                     }
                 }
 
-            k = (k + 1);
             }
-
-    
     </script>
 {% endblock scripts %}
 

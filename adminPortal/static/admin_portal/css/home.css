@@ -33,3 +33,14 @@
 .left a{
     margin-right:15px;
 }
+.left a{
+    margin-left:20px;
+    text-decoration: none;
+    color:rgb(61, 79, 184);
+
+}
+.left a:hover{
+    color:rgb(20, 20, 102);
+    text-decoration: underline;
+
+}
