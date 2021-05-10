@@ -24,7 +24,7 @@ h3{
     font-size: 22px;
 }
 
-p{
+p.date{
     text-align: end;
     width:100%;
 }
