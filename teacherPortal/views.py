@@ -10,6 +10,7 @@ from .models import Assignment, Teacher_Timetable, Teacher
 from .forms import AssignmentForm
 from adminPortal.models import Link, Announcement
 import pandas as pd
+from django.conf import settings
 import json
 from django.utils.safestring import mark_safe
 from django.contrib.auth import get_user_model
@@ -122,7 +123,7 @@ class NoticeboardView(LoginRequiredMixin, ListView):
 
 
 def excel_to_json(url):
-    url_ = "F:/FrostHack/Project"+url
+    url_ = str(settings.BASE_DIR)+url
     file_ = pd.read_excel(url_)
     df = pd.DataFrame(file_)
     result = df.to_json(orient="columns")

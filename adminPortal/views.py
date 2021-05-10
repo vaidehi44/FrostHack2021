@@ -13,7 +13,6 @@ from django.contrib.auth import authenticate, login, logout
 from .models import Link, Student_Timetable, Announcement
 import pandas as pd
 import json
-import os
 from django.conf import settings
 from django.utils.safestring import mark_safe
 
@@ -126,7 +125,7 @@ def user_login(request):
     
  
 def excel_to_json(url):
-    url_ = "F:/FrostHack/Project"+url
+    url_ = str(settings.BASE_DIR)+url
     file_ = pd.read_excel(url_)
     df = pd.DataFrame(file_)
     result = df.to_json(orient="columns")
